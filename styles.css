@@ -43,7 +43,7 @@ body {
   .hero-image {
     width: 90%;
     height: 450px;
-    background-image: url('/heroBanner.png'); /* Replace with your image */
+    background-image: url('images/heroBanner.png'); 
     background-size: cover;
     background-position: center center;
     display: flex;
