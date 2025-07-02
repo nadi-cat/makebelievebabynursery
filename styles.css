@@ -1,0 +1,270 @@
+/* General Styles */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Nunito', sans-serif;
+    background-color: #fff9f7;
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Nunito', sans-serif;
+    color: #5a4b44;
+  }
+  
+  header {
+    background-color: #f7e8e1;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e8dcd6;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: #5a4b44;
+  }
+  
+  nav a {
+    margin-left: 1.5em;
+    text-decoration: none;
+    color: #5a4b44;
+    font-weight: 600;
+  }
+  
+  main {
+    padding: 2em;
+  }
+  
+  /* Hero Section */
+  .hero-image {
+    width: 90%;
+    height: 450px;
+    background-image: url('/heroBanner.png'); /* Replace with your image */
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 5vw;
+    margin: 0 auto;
+  }
+  
+  .hero-text {
+    background-color: #f7e8e1;
+    padding: 1.5em 2em;
+    border-radius: 16px;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  
+  /* Sections */
+  .intro, .mission, .vendors, .highlight {
+    max-width: 800px;
+    margin: 3em auto;
+    text-align: center;
+  }
+  
+  .highlight ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .highlight li {
+    background: #f3e2d9;
+    margin: 0.5em 0;
+    padding: 1em;
+    border-radius: 6px;
+    color: #4d3e37;
+  }
+  .paypal-button {
+    background-color: #eecfc4;
+    color: #5a4b44;
+    border: none;
+    padding: 0.6em 1.2em;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 0.5em;
+  }
+  
+  .paypal-button:hover {
+    background-color: #ddbcb1;
+  }
+  .doll-card {
+    background-color: #fff9f7;
+    border: 1px solid #e8dcd6;
+    border-radius: 12px;
+    padding: 1em;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    /* Smaller fixed width */
+    width: 300px;            
+    text-align: center;
+    height: auto;
+    /* Keep card block-level */
+    display: inline-block;   /* so cards can sit side by side */
+    margin: 0.5em;           /* some spacing between cards */
+  }
+
+  .doll-card img {
+    width: 100%;       /* image fills card width */
+    height: auto;      /* keep aspect ratio */
+    border-radius: 12px;
+    display: block;
+  }
+  .dollfull-card {
+    background-color: #fff9f7;
+    border: 1px solid #e8dcd6;
+    border-radius: 12px;
+    padding: 1em;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    /* Smaller fixed width */
+    width: 200px;            
+    text-align: center;
+    height: auto;
+    /* Keep card block-level */
+    display: inline-block;   /* so cards can sit side by side */
+    margin: 0.5em;           /* some spacing between cards */
+  }
+  .dollfull-card .doll-image {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 12px;
+    height: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+ 
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center; /* or space-between or flex-start */
+    margin-top: 2em;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #f7e8e1;
+    padding: 1em;
+    text-align: center;
+    border-top: 2px solid #e8dcd6;
+    margin-top: 2em;
+  }
+
+/* Lily Page Unique Styling */
+.lily-intro {
+    max-width: 800px;
+    margin: 3em auto;
+    text-align: center;
+  }
+  
+  .lily-card-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+  }
+  
+  .lily-card {
+    background-color: #fff9f7;
+    border: 1px solid #e8dcd6;
+    border-radius: 12px;
+    padding: 2em;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .lily-image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1.5em;
+  }
+  
+  .lily-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .lily-paypal-button {
+    background-color: #eecfc4;
+    color: #5a4b44;
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+  }
+  
+  .lily-paypal-button:hover {
+    background-color: #ddbcb1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lily-image {
+      max-width: 90%;
+    }
+  
+    .lily-image-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .lily-paypal-button {
+      width: 100%;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav a {
+      display: block;
+      margin: 0.5em 0 0 0;
+    }
+  
+    .hero-image {
+      height: 300px;
+      padding-left: 4vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-image {
+      height: 280px;
+      padding-left: 3vw;
+    }
+  }
+  
