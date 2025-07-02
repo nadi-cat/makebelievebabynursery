@@ -23,7 +23,6 @@ body {
   
   .logo {
     font-size: 1.8rem;
-    font-family: 'Nunito', sans-serif;
     font-weight: 700;
     color: #5a4b44;
   }
@@ -41,16 +40,17 @@ body {
   
   /* Hero Section */
   .hero-image {
-    width: 90%;
+    width: 100%;
     height: 450px;
-    background-image: url('images/heroBanner.png'); 
+    background-image: url('images/heroBanner.png');
     background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 5vw;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
   }
   
   .hero-text {
@@ -67,8 +67,6 @@ body {
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
-  
- 
   
   /* Sections */
   .intro, .mission, .vendors, .highlight {
@@ -89,6 +87,7 @@ body {
     border-radius: 6px;
     color: #4d3e37;
   }
+  
   .paypal-button {
     background-color: #eecfc4;
     color: #5a4b44;
@@ -107,41 +106,40 @@ body {
   .paypal-button:hover {
     background-color: #ddbcb1;
   }
+  
   .doll-card {
     background-color: #fff9f7;
     border: 1px solid #e8dcd6;
     border-radius: 12px;
     padding: 1em;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-    /* Smaller fixed width */
-    width: 300px;            
+    width: 300px;
     text-align: center;
     height: auto;
-    /* Keep card block-level */
-    display: inline-block;   /* so cards can sit side by side */
-    margin: 0.5em;           /* some spacing between cards */
+    display: inline-block;
+    margin: 0.5em;
   }
-
+  
   .doll-card img {
-    width: 100%;       /* image fills card width */
-    height: auto;      /* keep aspect ratio */
+    width: 100%;
+    height: auto;
     border-radius: 12px;
     display: block;
   }
+  
   .dollfull-card {
     background-color: #fff9f7;
     border: 1px solid #e8dcd6;
     border-radius: 12px;
     padding: 1em;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-    /* Smaller fixed width */
-    width: 200px;            
+    width: 200px;
     text-align: center;
     height: auto;
-    /* Keep card block-level */
-    display: inline-block;   /* so cards can sit side by side */
-    margin: 0.5em;           /* some spacing between cards */
+    display: inline-block;
+    margin: 0.5em;
   }
+  
   .dollfull-card .doll-image {
     width: 100%;
     max-width: 100px;
@@ -150,12 +148,11 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
   
- 
   .gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
-    justify-content: center; /* or space-between or flex-start */
+    justify-content: center;
     margin-top: 2em;
   }
   
@@ -167,9 +164,9 @@ body {
     border-top: 2px solid #e8dcd6;
     margin-top: 2em;
   }
-
-/* Lily Page Unique Styling */
-.lily-intro {
+  
+  /* Lily Page */
+  .lily-intro {
     max-width: 800px;
     margin: 3em auto;
     text-align: center;
@@ -227,22 +224,6 @@ body {
     background-color: #ddbcb1;
   }
   
-  /* Responsive */
-  @media (max-width: 768px) {
-    .lily-image {
-      max-width: 90%;
-    }
-  
-    .lily-image-row {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .lily-paypal-button {
-      width: 100%;
-    }
-  }
-  
   /* Responsive Design */
   @media (max-width: 768px) {
     header {
@@ -257,14 +238,30 @@ body {
   
     .hero-image {
       height: 300px;
-      padding-left: 4vw;
+    }
+  
+    .lily-image-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .lily-image {
+      max-width: 90%;
+    }
+  
+    .lily-paypal-button {
+      width: 100%;
     }
   }
   
   @media (max-width: 480px) {
     .hero-image {
       height: 280px;
-      padding-left: 3vw;
+    }
+  
+    .hero-text {
+      padding: 1em;
+      font-size: 0.95rem;
     }
   }
   
