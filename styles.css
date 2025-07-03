@@ -41,10 +41,15 @@ body {
   /* Hero Banner  */
 
   .hero-image {
-    text-align: center; /* centers inline or inline-block elements inside */
+    display: flex;
+    justify-content: center;
+    
+    padding: 2em 1em; /* optional spacing */
   }
+  
   .hero-image img {
     width: 500px;
+    
  
   }
   
@@ -237,7 +242,7 @@ body {
   
   @media (max-width: 480px) {
     .hero-image img {
-        width: 300px;
+        width: 390px;
      
       }
    
