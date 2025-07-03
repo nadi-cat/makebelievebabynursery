@@ -45,9 +45,7 @@ body {
   }
   .hero-image img {
     width: 500px;
-    
-   
-   
+ 
   }
   
 
@@ -238,6 +236,10 @@ body {
   }
   
   @media (max-width: 480px) {
+    .hero-image img {
+        width: 300px;
+     
+      }
    
   
   
@@ -252,6 +254,10 @@ body {
   
   /* Styles for large screens (desktops, large laptops, etc.) */
 @media (min-width: 1024px) {
+    .hero-image img {
+        width: 1000px;
+     
+      }
     
 
   }
