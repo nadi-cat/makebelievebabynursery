@@ -39,12 +39,15 @@ body {
   }
   
   /* Hero Banner  */
+
   .hero-image {
-    width: 80vw;
-    height: auto;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+    text-align: center; /* centers inline or inline-block elements inside */
+  }
+  .hero-image img {
+    width: 500px;
+    
+   
+   
   }
   
 
@@ -217,7 +220,7 @@ body {
       display: block;
       margin: 0.5em 0 0 0;
     }
-  
+   
     
   
     .lily-image-row {
@@ -236,15 +239,7 @@ body {
   
   @media (max-width: 480px) {
    
-    .hero-image img {
-        width: 80vw;
-        height: auto;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-      }
-      
-    
+  
   
     .lily-image {
       max-width: 95%;
@@ -253,5 +248,11 @@ body {
     .lily-paypal-button {
       width: 100%;
     }
+  }
+  
+  /* Styles for large screens (desktops, large laptops, etc.) */
+@media (min-width: 1024px) {
+    
+
   }
   
