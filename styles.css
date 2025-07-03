@@ -38,35 +38,17 @@ body {
     padding: 2em;
   }
   
-  /* Hero Section */
+  /* Hero Banner  */
   .hero-image {
-    width: 100%;
-    height: 450px;
-    background-image: url('images/heroBanner.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    width: 80vw;
+    height: auto;
+    overflow: hidden;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
   }
   
-  .hero-text {
-    background-color: #f7e8e1;
-    padding: 1.5em 2em;
-    border-radius: 16px;
-    max-width: 400px;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
+
+  
   
   /* Sections */
   .intro, .mission, .vendors, .highlight {
@@ -236,9 +218,7 @@ body {
       margin: 0.5em 0 0 0;
     }
   
-    .hero-image {
-      height: 300px;
-    }
+    
   
     .lily-image-row {
       flex-direction: column;
@@ -255,13 +235,23 @@ body {
   }
   
   @media (max-width: 480px) {
-    .hero-image {
-      height: 280px;
+   
+    .hero-image img {
+        width: 80vw;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+      }
+      
+    
+  
+    .lily-image {
+      max-width: 95%;
     }
   
-    .hero-text {
-      padding: 1em;
-      font-size: 0.95rem;
+    .lily-paypal-button {
+      width: 100%;
     }
   }
   
