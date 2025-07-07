@@ -8,16 +8,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo">Make Believe Baby</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="dolls.html">Our Dolls</a>
-      <a href="clothing.html">Clothing</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+    
+        <div class="logo">
+          <img src="images/MBBLogo.PNG" alt="Logo" class="logo-img" />
+          <span>Make Believe Baby</span>
+        </div>
+    
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="dolls.html">Our Dolls</a>
+          <a href="clothing.html">Clothing</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
 
   <main>
     <section class="lily-intro">
@@ -53,10 +63,18 @@
       </div>
     </section>
   </main>
-
   <footer>
-    <p>&copy; 2025 Make Believe. All rights reserved.</p>
+    <p>&copy; 2025 Make Believe Baby. All rights reserved.</p>
   </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
 

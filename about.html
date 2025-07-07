@@ -9,7 +9,17 @@
 </head>
 <body>
   <header>
-    <div class="logo">Make Believe Baby</div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="logo">
+      <img src="images/MBBLogo.PNG" alt="Logo" class="logo-img" />
+      <span>Make Believe Baby</span>
+    </div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -23,7 +33,16 @@
     <p>Make Believe was born from a passion for lifelike artistry. Our lead artist Yoshiko Smith has been painting reborn dolls for over 5 years. With a background in fine arts from college, every doll is a result of dedication, detail, and love. We create more than dolls — we create keepsakes filled with soul and personality. Our commitment to quality and realism makes our dolls stand out, and our experience has made us a trusted name among collectors and educators alike.</p>
   </main>
   <footer>
-    <p>&copy; 2025 Make Believe. All rights reserved.</p>
+    <p>&copy; 2025 Make Believe Baby. All rights reserved.</p>
   </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>

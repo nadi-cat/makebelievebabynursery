@@ -12,52 +12,133 @@ body {
     color: #5a4b44;
   }
   
+  /* Header */
   header {
     background-color: #f7e8e1;
     padding: 1em 2em;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #e8dcd6;
+    flex-wrap: nowrap;
+    gap: 1rem;
   }
   
+  /* Hamburger button */
+  .hamburger {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2000; /* on top of nav */
+    margin-right: 1rem; /* spacing from logo */
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #5a4b44;
+    border-radius: 2px;
+    margin-bottom: 5px;
+  }
+  
+  .hamburger span:last-child {
+    margin-bottom: 0;
+  }
+  
+  .hamburger:hover {
+    opacity: 0.7;
+  }
+  
+  /* Logo */
   .logo {
+    display: flex;
+    align-items: center;
     font-size: 1.8rem;
     font-weight: 700;
     color: #5a4b44;
+    gap: 10px;
   }
   
+  .logo-img {
+    height: 60px;
+    width: auto;
+    max-height: 60px;
+  }
+  
+  /* Navigation - overlay menu for small screens */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden off screen right */
+    height: 100vh;
+    width: 250px;
+    background-color: #f7e8e1;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 1500;
+    overflow-y: auto;
+  }
+  
+  /* Show nav overlay when active */
+  nav.show {
+    right: 0;
+  }
+  
+  /* Nav links */
   nav a {
-    margin-left: 1.5em;
     text-decoration: none;
     color: #5a4b44;
     font-weight: 600;
+    font-size: 1.2rem;
   }
   
+  /* Larger screens: show nav inline */
+  @media (min-width: 769px) {
+    .hamburger {
+      display: none;
+    }
+  
+    nav {
+      position: static;
+      height: auto;
+      width: auto;
+      flex-direction: row;
+      padding: 0;
+      box-shadow: none;
+      right: 0;
+      transition: none;
+      margin-left: auto; /* push nav to right */
+      gap: 1.5em;
+    }
+  }
+  
+  /* Main content */
   main {
     padding: 2em;
   }
   
-  /* Hero Banner  */
-
+  /* Hero Banner */
   .hero-image {
     display: flex;
     justify-content: center;
-    
-    padding: 2em 1em; /* optional spacing */
+    padding: 2em 1em;
   }
   
   .hero-image img {
     width: 500px;
-    
- 
   }
   
-
-  
-  
   /* Sections */
-  .intro, .mission, .vendors, .highlight {
+  .intro, .mission, .highlight {
     max-width: 800px;
     margin: 3em auto;
     text-align: center;
@@ -76,74 +157,6 @@ body {
     color: #4d3e37;
   }
   
-  .paypal-button {
-    background-color: #eecfc4;
-    color: #5a4b44;
-    border: none;
-    padding: 0.6em 1.2em;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 0.5em;
-  }
-  
-  .paypal-button:hover {
-    background-color: #ddbcb1;
-  }
-  
-  .doll-card {
-    background-color: #fff9f7;
-    border: 1px solid #e8dcd6;
-    border-radius: 12px;
-    padding: 1em;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-    width: 300px;
-    text-align: center;
-    height: auto;
-    display: inline-block;
-    margin: 0.5em;
-  }
-  
-  .doll-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-  }
-  
-  .dollfull-card {
-    background-color: #fff9f7;
-    border: 1px solid #e8dcd6;
-    border-radius: 12px;
-    padding: 1em;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-    width: 200px;
-    text-align: center;
-    height: auto;
-    display: inline-block;
-    margin: 0.5em;
-  }
-  
-  .dollfull-card .doll-image {
-    width: 100%;
-    max-width: 100px;
-    border-radius: 12px;
-    height: auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  }
-  
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    justify-content: center;
-    margin-top: 2em;
-  }
-  
   /* Footer */
   footer {
     background-color: #f7e8e1;
@@ -152,118 +165,67 @@ body {
     border-top: 2px solid #e8dcd6;
     margin-top: 2em;
   }
-  
-  /* Lily Page */
-  .lily-intro {
-    max-width: 800px;
-    margin: 3em auto;
-    text-align: center;
-  }
-  
-  .lily-card-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 1em;
-  }
-  
-  .lily-card {
+
+  .doll-card {
+    display: inline-block;
+    width: 280px;          /* fixed width for cards */
     background-color: #fff9f7;
     border: 1px solid #e8dcd6;
     border-radius: 12px;
-    padding: 2em;
+    padding: 1em;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-    max-width: 900px;
-    width: 100%;
     text-align: center;
+    margin: 0.5em;
+    vertical-align: top;
   }
   
-  .lily-image-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-    margin-bottom: 1.5em;
-  }
-  
-  .lily-image {
-    width: 100%;
-    max-width: 280px;
+  .doll-card img {
+    max-width: 100%;       /* limit image width to card width */
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: block;
+    margin-bottom: 0.75em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
   
-  .lily-paypal-button {
-    background-color: #eecfc4;
-    color: #5a4b44;
-    border: none;
-    padding: 0.75em 1.5em;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 1em;
-  }
   
-  .lily-paypal-button:hover {
-    background-color: #ddbcb1;
-  }
-  
-  /* Responsive Design */
+  /* Responsive tweaks */
   @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
+    .hamburger {
+      display: flex;
     }
   
-    nav a {
-      display: block;
-      margin: 0.5em 0 0 0;
-    }
-   
-    
-  
-    .lily-image-row {
-      flex-direction: column;
-      align-items: center;
+    .logo-img {
+      height: 50px;
     }
   
-    .lily-image {
-      max-width: 90%;
+    .logo {
+      font-size: 1.4rem;
     }
   
-    .lily-paypal-button {
-      width: 100%;
+    .hero-image img {
+      width: 400px;
     }
   }
   
   @media (max-width: 480px) {
-    .hero-image img {
-        width: 390px;
-     
-      }
-   
-  
-  
-    .lily-image {
-      max-width: 95%;
+    .logo-img {
+      height: 45px;
     }
   
-    .lily-paypal-button {
-      width: 100%;
+    .logo {
+      font-size: 1.1rem;
+    }
+  
+    .hero-image img {
+      width: 360px;
     }
   }
   
-  /* Styles for large screens (desktops, large laptops, etc.) */
-@media (min-width: 1024px) {
+  /* Large Screens */
+  @media (min-width: 1024px) {
     .hero-image img {
-        width: 1000px;
-     
-      }
-    
-
+      width: 1000px;
+    }
   }
   

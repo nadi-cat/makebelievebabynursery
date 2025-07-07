@@ -2,15 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Make Believe - Reborn Dolls</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <div class="logo">Make Believe Baby</div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="logo">
+      <img src="images/MBBLogo.PNG" alt="Logo" class="logo-img" />
+      <span>Make Believe Baby</span>
+    </div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -23,24 +32,27 @@
   <main>
     <!-- Hero Section  -->
     <div class="hero-image">
-        <img src="images/rebornBanner.png" alt="Banner" />
-    
-      </div>
-     
+      <img src="images/rebornBanner.png" alt="Banner" />
+    </div>
 
     <!-- Welcome Section -->
     <section class="intro">
       <h2>Welcome to Make Believe Baby Nursery</h2>
-      <p>At Make Believe Baby, we specialize in the art of bringing reborn dolls to life. Every baby is hand-painted with care and attention to detail, capturing the innocence and beauty of real newborns. Whether you are a collector, a first-time buyer, or a vendor interested in hosting our painting classes, you're in the right place.</p>
+      <p>
+        At Make Believe Baby, we specialize in the art of bringing reborn dolls to life.
+        Every baby is hand-painted with care and attention to detail, capturing the innocence and beauty of real newborns.
+        Whether you are a collector, a first-time buyer, or a vendor interested in hosting our painting classes, you're in the right place.
+      </p>
     </section>
 
     <!-- Mission Statement -->
     <section class="mission">
       <h3>Our Mission</h3>
-      <p>Our goal is to offer dolls that feel real, look stunning, and hold emotional value for those who welcome them into their homes. We believe each reborn is a piece of art — and a personal keepsake that tells a story.</p>
+      <p>
+        Our goal is to offer dolls that feel real, look stunning, and hold emotional value for those who welcome them into their homes.
+        We believe each reborn is a piece of art — and a personal keepsake that tells a story.
+      </p>
     </section>
-
-   
 
     <!-- Highlight Section -->
     <section class="highlight">
@@ -56,8 +68,16 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Make Believe. All rights reserved.</p>
+    <p>&copy; 2025 Make Believe Baby. All rights reserved.</p>
   </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
-
