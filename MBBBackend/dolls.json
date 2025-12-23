@@ -6,7 +6,19 @@
       "stock": 1,
       "images": [
         "little-bear-1.png",
-        "little-bear-2.png"
+        "little-bear-2.png",
+        "little-bear-3.png"
+      ],
+      "description": "Describe Little Bear here."
+    },
+    "Sage": {
+      "name": "Sage",
+      "price": 350,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "sage.png",
+        "sage-2.png"
       ],
       "description": "Describe Little Bear here."
     },
@@ -162,6 +174,17 @@
       "images": [
         "johanna-awake-1.png",
         "johanna-awake-2.png"
+      ],
+      "description": "Describe Johanna Awake here."
+    },
+    "Tessa-WH": {
+      "name": "Tessa",
+      "price": 450,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "TessaWH-1.png",
+        "TessaWH-2.png"
       ],
       "description": "Describe Johanna Awake here."
     }
