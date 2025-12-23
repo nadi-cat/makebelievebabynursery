@@ -54,7 +54,7 @@
   <script>
     const gallery = document.getElementById("gallery");
 
-    fetch("http://localhost:3000/api/dolls")
+    fetch("https://makebelievebabybackend.onrender.com")
       .then(res => res.json())
       .then(dolls => {
         for (const id in dolls) {
