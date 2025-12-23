@@ -28,29 +28,19 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-   
+
   <main>
     <h2>Our Dolls</h2>
-    <div class="gallery">
-      <a href="patience.html" class="doll-card">
-        <img src="images/patience.png" alt="Patience Doll">
-        <p><strong>Patience</strong> - $600</p>
-      </a>
-
-      <a href="bahama.html" class="doll-card">
-        <img src="images/bah1.png" alt="Bahama Doll">
-        <p><strong>Bahama</strong> - $650</p>
-      </a>
-  
-      
-  
-      <!-- Add more dolls here -->
+    <div class="gallery" id="gallery">
+      <!-- All dolls will be inserted here -->
     </div>
   </main>
+
   <footer>
     <p>&copy; 2025 Make Believe Baby. All rights reserved.</p>
   </footer>
 
+  <!-- Hamburger menu script -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
@@ -59,5 +49,32 @@
       nav.classList.toggle('show');
     });
   </script>
+
+  <!-- Auto-populate dolls gallery -->
+  <script>
+    const gallery = document.getElementById("gallery");
+
+    fetch("http://localhost:3000/api/dolls")
+      .then(res => res.json())
+      .then(dolls => {
+        for (const id in dolls) {
+          const doll = dolls[id];
+
+          const card = document.createElement("a");
+          card.href = `doll.html?id=${id}`;
+          card.className = "doll-card";
+          card.innerHTML = `
+            <img src="images/${doll.images[0]}" alt="${doll.name}">
+            <p><strong>${doll.name}</strong> - $${doll.price}</p>
+          `;
+          gallery.appendChild(card);
+        }
+      })
+      .catch(err => {
+        console.error("Failed to load dolls:", err);
+        gallery.innerHTML = "<p>Unable to load dolls at this time.</p>";
+      });
+  </script>
 </body>
 </html>
+

@@ -1,0 +1,169 @@
+{
+    "little-bear": {
+      "name": "Little Bear",
+      "price": 650,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "little-bear-1.png",
+        "little-bear-2.png"
+      ],
+      "description": "Describe Little Bear here."
+    },
+    "landon": {
+      "name": "Landon",
+      "price": 400,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "landon-1.png",
+        "landon-2.png"
+      ],
+      "description": "Describe Landon here."
+    },
+    "johanna": {
+      "name": "Johanna",
+      "price": 300,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "johanna-1.png",
+        "johanna-2.png"
+      ],
+      "description": "Describe Johanna here."
+    },
+    "maddie": {
+      "name": "Maddie",
+      "price": 800,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "maddie-1.png",
+        "maddie-2.png"
+      ],
+      "description": "Describe Maddie here."
+    },
+    "milan": {
+      "name": "Milan",
+      "price": 650,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "milan-1.png",
+        "milan-2.png"
+      ],
+      "description": "Describe Milan here."
+    },
+    "bahama": {
+      "name": "Bahama",
+      "price": 650,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "bah1.png",
+        "bah2.png",
+        "bah3.png"
+      ],
+      "description": "Describe Bahama here."
+    },
+    "shyann": {
+      "name": "Shyann",
+      "price": 385,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "shyann-1.png",
+        "shyann-2.png"
+      ],
+      "description": "Describe Shyann here."
+    },
+    "emmy": {
+      "name": "Emmy",
+      "price": 360,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "emmy-1.png",
+        "emmy-2.png"
+      ],
+      "description": "Describe Emmy here."
+    },
+    "tessa": {
+      "name": "Tessa",
+      "price": 400,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "tessa-1.png",
+        "tessa-2.png"
+      ],
+      "description": "Describe Tessa here."
+    },
+    "everlee": {
+      "name": "Everlee",
+      "price": 450,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "everlee-1.png",
+        "everlee-2.png"
+      ],
+      "description": "Describe Everlee here."
+    },
+    "miranda": {
+      "name": "Miranda",
+      "price": 450,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "miranda-1.png",
+        "miranda-2.png"
+      ],
+      "description": "Describe Miranda here."
+    },
+    "gounchin": {
+      "name": "Gounchin",
+      "price": 600,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "gounchin-1.png",
+        "gounchin-2.png"
+      ],
+      "description": "Describe Gounchin here."
+    },
+    "angelique-joy": {
+      "name": "Angelique Joy",
+      "price": 400,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "angelique-joy-1.png",
+        "angelique-joy-2.png"
+      ],
+      "description": "Describe Angelique Joy here."
+    },
+    "elsie": {
+      "name": "Elsie",
+      "price": 400,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "elsie-1.png",
+        "elsie-2.png"
+      ],
+      "description": "Describe Elsie here."
+    },
+    "johanna-awake": {
+      "name": "Johanna Awake",
+      "price": 450,
+      "shipping": 12,
+      "stock": 1,
+      "images": [
+        "johanna-awake-1.png",
+        "johanna-awake-2.png"
+      ],
+      "description": "Describe Johanna Awake here."
+    }
+  }
+  

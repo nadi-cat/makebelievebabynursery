@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doll Detail - Make Believe</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="logo">
+      <img src="images/MBBLogo.PNG" alt="Logo" class="logo-img" />
+      <span>Make Believe Baby</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="dolls.html">Our Dolls</a>
+      <a href="clothing.html">Clothing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="lily-intro">
+      <h2 id="doll-name">Loading...</h2>
+    </section>
+
+    <section class="lily-card-wrapper">
+      <div class="lily-card">
+        <div class="lily-image-row" id="doll-images">
+          <!-- Images will be inserted dynamically -->
+        </div>
+
+        <p id="doll-price"></p>
+        <p id="doll-description"></p>
+
+        <div id="buy-buttons"></div>
+        <p id="sold-out" style="display:none; color:red; font-weight:bold;">Sold Out</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Make Believe Baby. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Hamburger menu
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
+
+  <script>
+    // Dynamic doll content
+    const params = new URLSearchParams(window.location.search);
+    const dollId = params.get("id");
+
+    fetch(`http://localhost:3000/api/dolls/${dollId}`)
+      .then(res => res.json())
+      .then(doll => {
+        // Set doll name
+        document.getElementById("doll-name").textContent = doll.name;
+
+        // Insert images
+        const imagesDiv = document.getElementById("doll-images");
+        doll.images.forEach(src => {
+          const img = document.createElement("img");
+          img.src = `images/${src}`;
+          img.alt = doll.name;
+          img.className = "lily-image";
+          imagesDiv.appendChild(img);
+        });
+
+        // Price and description
+        document.getElementById("doll-price").textContent = "$" + doll.price + (doll.shipping ? " + SH" : "");
+        document.getElementById("doll-description").textContent = doll.description || "";
+
+        // Buy buttons
+        const buyButtons = document.getElementById("buy-buttons");
+
+        if (doll.stock === 0) {
+          document.getElementById("sold-out").style.display = "block";
+        } else {
+          // PayPal
+          const paypalForm = document.createElement("form");
+          paypalForm.action = "https://www.paypal.com/cgi-bin/webscr";
+          paypalForm.method = "post";
+          paypalForm.target = "_top";
+          paypalForm.innerHTML = `
+            <input type="hidden" name="cmd" value="_xclick" />
+            <input type="hidden" name="business" value="Makebelievebabynursery@gmail.com" />
+            <input type="hidden" name="item_name" value="${doll.name}" />
+            <input type="hidden" name="amount" value="${doll.price}" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="hidden" name="shipping" value="${doll.shipping}" />
+            <input type="hidden" name="return" value="https://makebelievebabynursery.com/thank-you.html" />
+            <button type="submit" class="lily-paypal-button">Buy Now</button>
+          `;
+          buyButtons.appendChild(paypalForm);
+
+          // Stripe
+          const stripeButton = document.createElement("button");
+          stripeButton.textContent = "Buy with Card (Stripe)";
+          stripeButton.addEventListener("click", async () => {
+            const res = await fetch("http://localhost:3000/api/create-checkout-session", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ dollId })
+            });
+            const data = await res.json();
+            window.location = data.url; // Redirect to Stripe checkout
+          });
+          buyButtons.appendChild(stripeButton);
+        }
+      })
+      .catch(err => {
+        document.getElementById("doll-name").textContent = "Doll not found";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

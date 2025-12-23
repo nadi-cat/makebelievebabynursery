@@ -1,0 +1,20 @@
+{
+  "name": "make-believe-backend",
+  "version": "1.0.0",
+  "description": "Backend for Make Believe Baby inventory and payments",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.22.1",
+    "stripe": "^14.25.0"
+  }
+}
