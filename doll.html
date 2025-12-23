@@ -72,7 +72,7 @@
     const params = new URLSearchParams(window.location.search);
     const dollId = params.get("id");
 
-    fetch(`https://makebelievebabybackend.onrender.com/api/dolls/${dollId}`)
+    fetch(`https://makebelievebabynursery.onrender.com/api/dolls/${dollId}`)
       .then(res => res.json())
       .then(doll => {
         // Set doll name
@@ -119,7 +119,7 @@
           const stripeButton = document.createElement("button");
           stripeButton.textContent = "Buy with Card (Stripe)";
           stripeButton.addEventListener("click", async () => {
-            const res = await fetch("https://makebelievebabybackend.onrender.com/api/create-checkout-session", {
+            const res = await fetch("https://makebelievebabynursery.onrender.com/api/create-checkout-session", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ dollId })
